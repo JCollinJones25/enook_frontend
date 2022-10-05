@@ -1,0 +1,35 @@
+$green: rgb(52, 112, 52);
+$grey: #f1f1f1;
+
+@mixin green-bg {
+    background-color: $green;
+    color: white;
+}
+
+@mixin grey-bg {
+    background-color: $grey;
+}
+
+@mixin main-font {
+    font-family: 'Lato', sans-serif;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.App {
+    @include grey-bg;
+    @include main-font;
+}
+
+.header {
+    @include green-bg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 20px;
+}
