@@ -1,4 +1,4 @@
-$green: rgb(52, 112, 52);
+$green: #028574;
 $grey: #f1f1f1;
 
 @mixin green-bg {
@@ -21,7 +21,7 @@ html, body {
     height: 100vh;
 }
 
-.App {
+.app {
     @include grey-bg;
     @include main-font;
 }
