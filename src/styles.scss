@@ -1,79 +1,103 @@
 $green: #028574;
 $grey: #f1f1f1;
+$yellow: #f7f770;
 
 @mixin green-bg {
-    background-color: $green;
-    color: white;
+  background-color: $green;
+  color: white;
 }
 
 @mixin grey-bg {
-    background-color: $grey;
+  background-color: $grey;
 }
 
 @mixin main-font {
-    font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
-html, body {
-    @include grey-bg;
-    @include main-font;
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
+html,
+body {
+  @include grey-bg;
+  @include main-font;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  padding: 15px;
 }
 
 .header {
-    @include green-bg;
+  @include green-bg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px 0 20px;
+
+  img {
+    width: 50px;
+    height: 40px;
+  }
+
+  div {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    width: 130px;
     align-items: center;
-    padding: 0 20px 0 20px;
-
-    img {
-        width: 50px;
-        height: 40px;
-    }
-
-    div {
-        display: flex;
-        flex-direction: row;
-        width: 130px;
-        align-items: center;
-        justify-content: space-between;
-    }
+    justify-content: space-between;
+  }
 }
 
 .library {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 15px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  width: 200px;
+  height: 350px;
+  text-align: center;
+
+  img {
+    width: 150px;
+    min-height: 225px;
+    object-fit: cover;
+  }
+
+  h3,
+  p,
+  div {
+    margin: 5px auto 5px auto;
+  }
+
+  div {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 75%;
     align-items: center;
-    margin: 10px;
-    width: 200px;
-    height: 450px;
-    text-align: center;
-    
-    img {
-        width: auto;
-        height: 300px;
-        min-height: 300px;
-        object-fit: cover;
+    justify-content: space-between;
+
+    button {
+      background-color: $yellow;
+      border: 1px solid grey;
+      height: 35px;
     }
 
-    h2 {
-        margin: 2px;
+    button:active {
+      -webkit-box-shadow: inset 0px 0px 5px #d2d2d2;
+      -moz-box-shadow: inset 0px 0px 5px #d2d2d2;
+      box-shadow: inset 0px 0px 5px #d2d2d2;
+      outline: none;
     }
 
-    div {
-        display: flex;
-        justify-content: space-between;
+    h3 {
+      color: red;
     }
-
+  }
 }

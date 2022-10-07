@@ -5,11 +5,11 @@ const Library = ({ books }) => {
         return (
           <div className="book">
             <img src={book.cover} alt={book.title} />
-            <h2>{book.title}</h2>
-              <h3>{book.author}</h3>
+            <h3>{book.title}</h3>
+            <p>by {book.author}</p>
             <div>
-                <button></button>
               <h3>${book.price}</h3>
+              <button>Add to cart</button>
             </div>
           </div>
         );
