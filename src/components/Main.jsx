@@ -28,9 +28,8 @@ const Main = () => {
         <Route path="/" element={<Library books={books} />} />
         <Route
           path="/library/:id"
-          render={(rp) => {
-            <Show {...rp} />;
-          }}
+          element={
+            <Show books={books}/>}
         />
       </Routes>
     </main>
