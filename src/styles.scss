@@ -1,6 +1,7 @@
 $green: #028574;
 $grey: #f1f1f1;
 $yellow: #f7f770;
+$price: #a80101;
 
 @mixin green-bg {
   background-color: $green;
@@ -59,11 +60,10 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  text-align: center;
   margin: 10px;
   width: 200px;
   height: 350px;
-  text-align: center;
 
   img {
     width: 150px;
@@ -72,11 +72,24 @@ main {
   }
 
   h3,
+  h4,
   p,
-  div {
+  a {
     margin: 5px auto 5px auto;
+    text-decoration: none;
+    color: black;
   }
+}
 
+.bookInfo {
+  text-align: left;
+}
+
+#price {
+  color: $price;
+}
+
+.show {
   div {
     display: flex;
     width: 75%;
@@ -94,10 +107,6 @@ main {
       -moz-box-shadow: inset 0px 0px 5px #d2d2d2;
       box-shadow: inset 0px 0px 5px #d2d2d2;
       outline: none;
-    }
-
-    h3 {
-      color: red;
     }
   }
 }

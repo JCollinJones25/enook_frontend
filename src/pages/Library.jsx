@@ -6,16 +6,15 @@ const Library = ({ books }) => {
       {books.map((book) => {
         return (
           <div key={book._id} className="book">
-              <Link to={`/library/${book._id}`}>
+            <Link to={`/library/${book._id}`}>
               <img src={book.cover} alt={book.title} />
-              <h3>{book.title}</h3>
-              <p>by {book.author}</p>
-              <div>
-                <h3>${book.price}</h3>
-                <button>Add to cart</button>
+              <div className="bookInfo">
+                <h3>{book.title}</h3>
+                <p>by {book.author}</p>
+                <h4 id="price">${book.price}</h4>
               </div>
-          </Link>
-            </div>
+            </Link>
+          </div>
         );
       })}
     </div>
