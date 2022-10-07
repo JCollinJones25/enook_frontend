@@ -22,8 +22,10 @@ const Main = () => {
 
   return (
     <main>
+      <h3>Library</h3>
+      <hr></hr>
       <Routes>
-        <Route path="/" element={<Library />} />
+        <Route path="/" element={<Library books={books} />} />
         <Route
           path="/library/:id"
           render={(rp) => {
