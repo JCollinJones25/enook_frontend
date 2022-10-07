@@ -1,0 +1,35 @@
+@use "variables" as *;
+
+.library {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  margin: 10px;
+  width: 200px;
+  height: 350px;
+
+  img {
+    width: 150px;
+    min-height: 225px;
+    object-fit: cover;
+  }
+
+  h3,
+  h4,
+  p,
+  a {
+    margin: 5px auto 5px auto;
+    text-decoration: none;
+    color: black;
+  }
+
+  div {
+    text-align: left;
+  }
+}

@@ -1,0 +1,65 @@
+@use "variables" as *;
+
+@mixin green-bg {
+  background-color: $green;
+  color: white;
+}
+
+@mixin grey-bg {
+  background-color: $grey;
+}
+
+@mixin main-font {
+  font-family: "Lato", sans-serif;
+}
+
+html,
+body {
+  @include grey-bg;
+  @include main-font;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  padding: 15px;
+}
+
+.header {
+  @include green-bg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px 0 30px;
+
+  img {
+    width: 50px;
+    height: 40px;
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: row;
+    width: 130px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-right {
+    @extend .header-left;
+    width: 200px;
+  }
+}
+
+#price {
+  color: $price;
+}
+
+footer {
+  height: 400px;
+  width: 100%;
+  margin: 100px 0 0 0;
+  background-color: $green;
+}

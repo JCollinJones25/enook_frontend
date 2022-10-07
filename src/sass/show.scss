@@ -1,0 +1,48 @@
+@use "variables" as *;
+
+.show {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px 20px 50px;
+
+  img {
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+  }
+
+  .bookInfo {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .purchase {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 0.5px solid grey;
+    border-radius: 5px;
+    box-shadow: 1px 1px grey;
+    height: 300px;
+    width: 200px;
+
+    button {
+      background-color: $yellow;
+      border: 1px solid grey;
+      border-radius: 5px;
+      box-shadow: 1px 1px grey;
+      height: 35px;
+      width: 100px;
+    }
+
+    button:active {
+      -webkit-box-shadow: inset 0px 0px 5px #d2d2d2;
+      -moz-box-shadow: inset 0px 0px 5px #d2d2d2;
+      box-shadow: inset 0px 0px 5px #d2d2d2;
+      outline: none;
+    }
+  }
+}
