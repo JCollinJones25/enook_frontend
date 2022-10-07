@@ -66,7 +66,7 @@ main {
   background-color: $green;
   height: 100%;
   z-index: 100;
-} 
+}
 
 .sidebar {
   display: flex;
@@ -79,7 +79,7 @@ main {
   position: fixed;
   top: 0;
   right: -100%;
-  transition: 1000ms;
+  transition: 1100ms;
 }
 
 .sidebar-items {
@@ -88,13 +88,13 @@ main {
   padding: 0;
 }
 
-.sidebar-items li{
+.sidebar-items li {
   list-style: none;
 }
 
 .sidebar.active {
   right: 0;
-  transition: 700ms;
+  transition: 500ms;
 }
 
 .sidebar-toggle {
@@ -196,4 +196,31 @@ footer {
   width: 100%;
   margin: 100px 0 0 0;
   background-color: $green;
+}
+
+.spinner-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 1.5px solid;
+  border-color: $green transparent $green transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+  display: flex;
+  align-self: center;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

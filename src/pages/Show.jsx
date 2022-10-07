@@ -33,7 +33,11 @@ const Show = ({ books }) => {
   };
 
   const loading = () => {
-    return <p>loading...</p>;
+    return (
+      <div className="spinner-container">
+        <div className="spinner"></div>
+      </div>
+    );
   };
 
   return book ? loaded() : loading();

@@ -25,7 +25,7 @@ const Main = () => {
       <Routes>
         <Route path="/" element={<Library books={books} />} />
         <Route
-          path="/library/:id"
+          path="/:id"
           element={
             <Show books={books}/>}
         />
