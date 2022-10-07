@@ -1,6 +1,6 @@
 $green: #028574;
 $grey: #f1f1f1;
-$yellow: #f7f770;
+$yellow: #f6f666;
 $price: #a80101;
 
 @mixin green-bg {
@@ -79,10 +79,10 @@ main {
     text-decoration: none;
     color: black;
   }
-}
 
-.bookInfo {
-  text-align: left;
+  div {
+    text-align: left;
+  }
 }
 
 #price {
@@ -90,16 +90,41 @@ main {
 }
 
 .show {
-  div {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px 20px 50px;
+
+  img {
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+  }
+
+  .bookInfo {
     display: flex;
-    width: 75%;
+    width: 45%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .purchase {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
+    border: 0.5px solid grey;
+    border-radius: 5px;
+    box-shadow: 1px 1px grey;
+    height: 300px;
+    width: 200px;
 
     button {
       background-color: $yellow;
       border: 1px solid grey;
+      border-radius: 5px;
+      box-shadow: 1px 1px grey;
       height: 35px;
+      width: 100px;
     }
 
     button:active {
@@ -109,4 +134,11 @@ main {
       outline: none;
     }
   }
+}
+
+footer {
+  height: 400px;
+  width: 100%;
+  margin: 100px 0 0 0;
+  background-color: $green;
 }
