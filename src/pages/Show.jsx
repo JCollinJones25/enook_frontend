@@ -8,7 +8,7 @@ const Show = ({ books }) => {
     return (
       <>
         <h3>
-          {book.title} - {book.genre.toUpperCase()}
+        / {book.genre} / {book.title}
         </h3>
         <hr></hr>
         <div className="show">
