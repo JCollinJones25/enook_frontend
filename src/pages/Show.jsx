@@ -8,19 +8,21 @@ const Show = ({ books }) => {
     return (
       <>
         <h3>
-        / {book.genre} / {book.title}
+          / {book.genre} / {book.title}
         </h3>
         <hr></hr>
         <div className="show">
-          <img src={book.cover} alt={book.title} />
-          <div className="bookInfo">
-            <div>
-              <h2>{book.title}</h2>
-              <h3>by {book.author}</h3>
-            </div>
-            <div>
-              <h3>Published in {book.year}</h3>
-              <p>{book.overview}</p>
+          <div className="book-info">
+            <img src={book.cover} alt={book.title} />
+            <div className="book-text">
+              <div>
+                <h2>{book.title}</h2>
+                <h3>by {book.author}</h3>
+              </div>
+              <div id="overview">
+                <h3>Published in {book.year}</h3>
+                <p>{book.overview}</p>
+              </div>
             </div>
           </div>
           <div className="purchase">

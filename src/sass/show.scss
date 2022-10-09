@@ -2,20 +2,29 @@
 
 .show {
   display: flex;
-  justify-content: space-between;
-  padding: 20px 50px 20px 50px;
+  flex-direction: row;
+  width: 90%;
+  padding: 15px;
+  margin: auto;
 
-  img {
-    width: 300px;
-    height: 450px;
-    object-fit: cover;
-  }
-
-  .bookInfo {
+  .book-info {
     display: flex;
-    width: 45%;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 75%;
+
+    img {
+      width: 300px;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .book-text {
+      @extend .book-info;
+      flex-direction: column;
+      width: 65%;
+      max-height: 500px;
+      margin: 20px 20px 20px 20px;
+    }
   }
 
   .purchase {
@@ -43,6 +52,39 @@
       -moz-box-shadow: inset 0px 0px 5px #d2d2d2;
       box-shadow: inset 0px 0px 5px #d2d2d2;
       outline: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .show {
+    .book-info {
+      width: 40%;
+      padding-left: 2%;
+      flex-direction: column;
+    }
+
+    .book-text {
+      text-align: left;
+      width: 80%;
+      margin-left: 0;
+      padding-left: 0;
+      z-index: 1;
+
+      hr {
+        display: block;
+      }
+
+      #overview {
+        border-top: solid 0.5px grey;
+      }
+    }
+
+    .purchase {
+      position: relative;
+      z-index: 1;
+      float: left;
+      width: 35%;
     }
   }
 }

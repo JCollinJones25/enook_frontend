@@ -9,7 +9,7 @@ import "./sass/spinner.scss";
 
 function App() {
   return (
-    <div className="app">
+    <div className="App">
       <Header />
       <Main />
       <Footer />

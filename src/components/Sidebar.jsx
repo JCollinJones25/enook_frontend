@@ -27,6 +27,13 @@ const Sidebar = () => {
                 toggle={setSidebar}
               ></Hamburger>
             </li>
+            <li>
+              <label for="admin">Admin</label>
+              <select>
+                <option>Add new book</option>
+                <option></option>
+              </select>
+            </li>
           </ul>
         </nav>
       </div>
