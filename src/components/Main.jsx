@@ -19,6 +19,17 @@ const Main = () => {
     }
   };
 
+  const createBook = async (book) => {
+    await fetch(url, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(book),
+    });
+    getBooks();
+  };
+
   useEffect(() => {
     getBooks();
   }, []);
@@ -28,7 +39,7 @@ const Main = () => {
       <Routes>
         <Route path="/" element={<Library books={books} />} />
         <Route path="/:id" element={<Show books={books} />} />
-        <Route path="/admin/new" element={<Create />} />
+        <Route path="/admin/new" element={<Create createBook={createBook} books={books}/>} />
       </Routes>
     </main>
   );
