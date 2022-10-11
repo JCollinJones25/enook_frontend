@@ -18,20 +18,28 @@ const Main = () => {
     getBooks();
   }, []);
 
-  console.log(books);
+  const loaded = () => {
+    return (
+      <main>
+        <Routes>
+          <Route path="/" element={<Library books={books} />} />
+          <Route path="/:id" element={<Show books={books} />} />
+        </Routes>
+      </main>
+    );
+  };
 
-  return (
-    <main>
-      <Routes>
-        <Route path="/" element={<Library books={books} />} />
-        <Route
-          path="/:id"
-          element={
-            <Show books={books}/>}
-        />
-      </Routes>
-    </main>
-  );
+  const loading = () => {
+    return (
+      <main>
+        <div className="spinner-container">
+          <div className="spinner"></div>
+        </div>
+      </main>
+    );
+  };
+
+  return books ? loaded() : loading();
 };
 
 export default Main;
