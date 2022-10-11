@@ -1,12 +1,28 @@
 import { useState } from "react";
 import { Twirl as Hamburger } from "hamburger-react";
-import Create from "./Create";
+import Create from "../pages/Create";
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => {
     setSidebar(!sidebar);
+  };
+
+  const openDropdown = () => {
+    document.querySelector(".dropdown-content").classList.toggle("show");
+  };
+
+  window.onclick = function closeDropdown(event) {
+    if (!event.target.matches(".dropbtn")) {
+      const dropdowns = document.querySelectorAll(".dropdown-content");
+      for (let i = 0; i < dropdowns.length; i++) {
+        let openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
+        }
+      }
+    }
   };
 
   return (
@@ -29,12 +45,14 @@ const Sidebar = () => {
           </li>
           <hr></hr>
           <li className="dropdown">
-              <button class="dropbtn">Admin</button>
-              <div class="dropdown-content">
-                <a href="/">Enter book</a>
-                <a href="/">Link 2</a>
-                <a href="/">Link 3</a>
-              </div>
+            <button onClick={openDropdown} className="dropbtn">
+              {">"} admin
+            </button>
+            <div className="dropdown-content">
+              <a href="/admin/new">Enter new book</a>
+              <a href="/">Link 2</a>
+              <a href="/">Link 3</a>
+            </div>
           </li>
           <hr></hr>
         </ul>

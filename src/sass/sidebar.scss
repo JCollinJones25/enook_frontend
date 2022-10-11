@@ -29,8 +29,6 @@
 
 .sidebar .active {
   display: flex;
-  // flex-direction: column;
-  // justify-content: center;
   align-items: center;
   margin: auto;
   padding: 0;
@@ -61,43 +59,44 @@
 }
 
 .dropdown {
-  margin: 15px 0 15px 0;
   position: relative;
-  // display: inline-block;
+  margin: 25px 0 25px 0;
 }
 
 .dropbtn {
   background-color: $green;
   color: white;
-  padding: 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
 }
 
+.dropbtn:hover {
+  text-decoration: underline;
+}
+
 .dropdown-content {
   display: none;
+
+  a {
+    color: black;
+    text-decoration: none;
+    padding: 15px;
+  }
+
+  a:hover {
+    background-color: $grey;
+  }
+}
+
+.dropdown-content.show {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
   position: absolute;
   background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0;
   z-index: 1;
 }
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: $grey}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:active .dropbtn {
-  background-color: #3e8e41;
-}
-
