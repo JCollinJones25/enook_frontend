@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Twirl as Hamburger } from "hamburger-react";
-import Create from "../pages/Create";
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
