@@ -8,10 +8,15 @@ const Main = () => {
 
   const url = "https://enook-api.herokuapp.com/library";
 
-  const getBooks = () => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((result) => setBooks(result));
+  const getBooks = async () => {
+    try {
+      const response = await fetch(url)
+      const data = await response.json()
+      setBooks(data);
+      console.log(books)
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   useEffect(() => {
