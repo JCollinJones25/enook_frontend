@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Create = ({ createBook, books }) => {
+const Create = ({ createBook }) => {
+
+const navigate = useNavigate();
+
   const [createForm, setCreateForm] = useState({
     title: "",
     author: "",
@@ -31,6 +34,7 @@ const Create = ({ createBook, books }) => {
       genre: "",
       price: "",
     });
+    navigate("/")
   };
 
   return (

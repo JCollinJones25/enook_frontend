@@ -39,7 +39,7 @@ const Main = () => {
       <Routes>
         <Route path="/" element={<Library books={books} />} />
         <Route path="/:id" element={<Show books={books} />} />
-        <Route path="/admin/new" element={<Create createBook={createBook} books={books}/>} />
+        <Route path="/admin/new" element={<Create createBook={createBook} />} />
       </Routes>
     </main>
   );
