@@ -24,6 +24,8 @@ const Create = ({ createBook }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    createBook(newBook);
+    console.log(newBook)
     setNewBook({
       title: "",
       author: "",
@@ -33,8 +35,6 @@ const Create = ({ createBook }) => {
       genre: "",
       price: "",
     });
-    createBook(newBook);
-    console.log(newBook)
     navigate("/")
   };
 
