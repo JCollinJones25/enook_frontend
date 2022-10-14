@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 const Create = ({ createBook }) => {
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const [createForm, setCreateForm] = useState({
+  const [newBook, setNewBook] = useState({
     title: "",
     author: "",
     cover: "",
@@ -16,16 +16,15 @@ const navigate = useNavigate();
   });
 
   const handleChange = (event) => {
-    setCreateForm({
-      ...createForm,
+    setNewBook({
+      ...newBook,
       [event.target.name]: event.target.value,
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    createBook(createForm);
-    setCreateForm({
+    setNewBook({
       title: "",
       author: "",
       cover: "",
@@ -34,6 +33,8 @@ const navigate = useNavigate();
       genre: "",
       price: "",
     });
+    createBook(newBook);
+    console.log(newBook)
     navigate("/")
   };
 
@@ -41,13 +42,13 @@ const navigate = useNavigate();
     <div className="create-form">
       <section>
         <form onSubmit={handleSubmit}>
-          <input type="text" value={createForm.title} name="title" placeholder="title" onChange={handleChange}></input>
-          <input type="text" value={createForm.author} name="author" placeholder="author" onChange={handleChange}></input>
-          <input type="text" value={createForm.cover} name="cover" placeholder="cover (URL)" onChange={handleChange}></input>
-          <input type="number" value={createForm.year} name="year" placeholder="year" onChange={handleChange}></input>
-          <input type="text" value={createForm.overview} name="overview" placeholder="overview" onChange={handleChange}></input>
-          <input type="text" value={createForm.genre} name="genre" placeholder="genre" onChange={handleChange}></input>
-          <input type="number" value={createForm.price} name="price" placeholder="price" onChange={handleChange}></input>
+          <input type="text" value={newBook.title} name="title" placeholder="title" onChange={handleChange}></input>
+          <input type="text" value={newBook.author} name="author" placeholder="author" onChange={handleChange}></input>
+          <input type="text" value={newBook.cover} name="cover" placeholder="cover (URL)" onChange={handleChange}></input>
+          <input type="number" value={newBook.year} name="year" placeholder="year" onChange={handleChange}></input>
+          <input type="text" value={newBook.overview} name="overview" placeholder="overview" onChange={handleChange}></input>
+          <input type="text" value={newBook.genre} name="genre" placeholder="genre" onChange={handleChange}></input>
+          <input type="number" value={newBook.price} name="price" placeholder="price" onChange={handleChange}></input>
           <input type="submit" value="Add Book"/>
         </form>
       </section>
