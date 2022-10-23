@@ -31,12 +31,17 @@ main {
   margin: auto;
 }
 
+.page-head {
+  font-size: 20px;
+  margin: 15px 0 10px 0;
+}
+
 .header {
   @include green-bg;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100vw;
+  padding: 10px 0 10px 0;
 
   img {
     width: 50px;
@@ -49,12 +54,20 @@ main {
     width: 150px;
     justify-content: space-between;
     margin-left: 30px;
-  }
 
+    h4 {
+      margin: 0;
+    }
+  }
+  
   .header-right {
     @extend .header-left;
     width: 250px;
     margin-right: 30px;
+
+    h5 {
+      margin: 0;
+    }
   }
 }
 
@@ -63,10 +76,12 @@ main {
 }
 
 .footer {
-  @include green-bg;
+  @include grey-bg;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: solid 0.5px grey;
+  margin-top: 150px;
   width: 100vw;
-  height: 400px;
+  height: 200px;
 }

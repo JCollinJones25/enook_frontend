@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Library = ({ books }) => {
   return (
     <>
-      <h3>Library</h3>
+      <h3 className="page-head">Library</h3>
       <hr></hr>
       <div className="library">
         {books.length > 0 ? (
@@ -13,9 +13,9 @@ const Library = ({ books }) => {
                 <Link to={`/${book._id}`}>
                   <img src={book.cover} alt={book.title} />
                   <div>
-                    <h3>{book.title}</h3>
+                    <h4>{book.title}</h4>
                     <p>by {book.author}</p>
-                    <h4 id="price">${book.price}</h4>
+                    <h5 id="price">${book.price}</h5>
                   </div>
                 </Link>
               </div>

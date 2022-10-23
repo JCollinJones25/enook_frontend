@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import Header from "./Header";
 import Library from "../pages/Library";
 import Show from "../pages/Show";
-import Create from "../pages/Create";
+import Footer from "./Footer";
 
 const Main = () => {
   const [books, setBooks] = useState([]);
@@ -16,14 +17,14 @@ const Main = () => {
       setBooks(data);
     } catch (error) {
       console.log(error);
-    };
+    }
   };
 
   const createBook = async (book) => {
     await fetch(url, {
       method: "post",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(book),
     });
@@ -42,13 +43,20 @@ const Main = () => {
   }, []);
 
   return (
-    <main>
-      <Routes>
-        <Route path="/" element={<Library books={books} />} />
-        <Route path="/:id" element={<Show books={books} deleteBook={deleteBook} />} />
-        <Route path="/admin/new" element={<Create createBook={createBook} />} />
-      </Routes>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<Library books={books} />} />
+          <Route
+            path="/:id"
+            element={<Show books={books} deleteBook={deleteBook} />}
+          />
+          {/* <Route path="/admin/new" element={<Create createBook={createBook} />} /> */}
+        </Routes>
+      </main>
+      <Footer />
+    </>
   );
 };
 

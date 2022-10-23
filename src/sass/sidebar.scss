@@ -7,10 +7,6 @@
   background-color: $green;
   height: 100%;
   z-index: 10;
-
-  hr {
-    width: 100%;
-  }
 }
 
 .sidebar {
@@ -38,10 +34,10 @@
   width: 95%;
   margin: 0 auto;
   padding: 0;
-}
 
-.sidebar-items li {
-  list-style: none;
+  li {
+    list-style: none;
+  }
 }
 
 .sidebar.active {
@@ -73,6 +69,11 @@
 
 .dropbtn:hover {
   text-decoration: underline;
+}
+
+.dropbtn:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .dropdown-content {

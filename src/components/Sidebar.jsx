@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Twirl as Hamburger } from "hamburger-react";
+import Create from "./Create";
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -45,15 +46,14 @@ const Sidebar = () => {
           <hr></hr>
           <li className="dropdown">
             <button onClick={openDropdown} className="dropbtn">
-              {">"} admin
+              Admin
             </button>
             <div className="dropdown-content">
-              <a href="/admin/new">Enter new book</a>
-              <a href="/">Link 2</a>
-              <a href="/">Link 3</a>
+              <Create />
+              <a href="/">Edit Book</a>
+              <a href="/">Delete Book</a>
             </div>
           </li>
-          <hr></hr>
         </ul>
       </nav>
     </div>

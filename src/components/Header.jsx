@@ -9,10 +9,10 @@ const Header = () => {
         <Link to="/">
           <img src={logo} alt="logo" />
         </Link>
-        <h2>ENook</h2>
+        <h4>ENook</h4>
       </div>
       <div className="header-right">
-        <h3>welcome</h3>
+        <h5>welcome</h5>
         <Sidebar />
       </div>
     </div>

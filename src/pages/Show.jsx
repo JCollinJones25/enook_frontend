@@ -14,7 +14,7 @@ const Show = ({ books, deleteBook }) => {
   const loaded = () => {
     return (
       <>
-        <h3>
+        <h3 className="page-head">
           / {book.genre} / {book.title}
         </h3>
         <hr></hr>
