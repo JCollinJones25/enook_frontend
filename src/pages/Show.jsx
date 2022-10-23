@@ -1,9 +1,15 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const Show = ({ books }) => {
+const Show = ({ books, deleteBook }) => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const book = books.find((b) => b._id === id);
   console.log(book)
+
+  const removeBook = () => {
+    deleteBook(id);
+    navigate("/");
+  }
 
   const loaded = () => {
     return (
@@ -31,6 +37,7 @@ const Show = ({ books }) => {
             <button>Add to cart</button>
           </div>
         </div>
+        <button className="button is-danger" onClick={removeBook}>Delete Book</button>
       </>
     );
   };

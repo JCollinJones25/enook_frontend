@@ -7,7 +7,7 @@ import Create from "../pages/Create";
 const Main = () => {
   const [books, setBooks] = useState([]);
 
-  const url = "https://enook-api.herokuapp.com/library";
+  const url = "https://enook-api.herokuapp.com/library/";
 
   const getBooks = async () => {
     try {
@@ -16,7 +16,7 @@ const Main = () => {
       setBooks(data);
     } catch (error) {
       console.log(error);
-    }
+    };
   };
 
   const createBook = async (book) => {
@@ -30,6 +30,13 @@ const Main = () => {
     getBooks();
   };
 
+  const deleteBook = async (id) => {
+    await fetch(url + id, {
+      method: "delete",
+    });
+    getBooks();
+  };
+
   useEffect(() => {
     getBooks();
   }, []);
@@ -38,7 +45,7 @@ const Main = () => {
     <main>
       <Routes>
         <Route path="/" element={<Library books={books} />} />
-        <Route path="/:id" element={<Show books={books} />} />
+        <Route path="/:id" element={<Show books={books} deleteBook={deleteBook} />} />
         <Route path="/admin/new" element={<Create createBook={createBook} />} />
       </Routes>
     </main>
