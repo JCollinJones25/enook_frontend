@@ -11,7 +11,7 @@ const Sidebar = () => {
   };
 
   const openDropdown = () => {
-    document.querySelector(".dropdown-content").classList.toggle("show");
+    document.querySelector(".dropdown-content").style.display = "flex";
   };
 
   window.onclick = function closeDropdown(event) {
@@ -25,6 +25,11 @@ const Sidebar = () => {
       }
     }
   };
+
+  
+  // const openModal = () => {
+    // setShow(true);
+  // }
 
   return (
     <div className="hamburger">
@@ -46,7 +51,7 @@ const Sidebar = () => {
           </li>
           <hr></hr>
           <li className="dropdown">
-            <button onClick={openDropdown} className="dropbtn">
+            <button onClick={(openDropdown)} className="dropbtn">
               Admin
             </button>
             <div className="dropdown-content">
