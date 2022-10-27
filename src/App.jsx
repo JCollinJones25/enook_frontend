@@ -4,6 +4,7 @@ import "./sass/sidebar.scss";
 import "./sass/library.scss";
 import "./sass/show.scss";
 import "./sass/spinner.scss";
+import "./sass/modal.scss";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Create = ({ createBook }) => {
+const Create = ({ createBook, show }) => {
   const navigate = useNavigate();
 
   const [newBook, setNewBook] = useState({
@@ -37,13 +37,25 @@ const Create = ({ createBook }) => {
     navigate("/");
   };
 
+  // const resetModal = () => {
+  //   setNewBook({
+  //     title: "",
+  //     author: "",
+  //     cover: "",
+  //     year: "",
+  //     overview: "",
+  //     genre: "",
+  //     price: "",
+  //   });
+  // };
+
+  if (!show) {
+    return null
+  }
+
   return (
     <div className="create">
-      <button type="button"
-        className="btn btn-primary"
-        data-toggle="modal">Enter New Book</button>   
-    <div className="modal">
-      <div className="modal-dialog">
+      <div className="modal">
         <div className="modal-content">
           <div className="create-form">
             <section>
@@ -55,7 +67,7 @@ const Create = ({ createBook }) => {
                   name="title"
                   placeholder="title"
                   onChange={handleChange}
-                  ></input>
+                ></input>
                 <input
                   type="text"
                   className="input form-control"
@@ -63,7 +75,7 @@ const Create = ({ createBook }) => {
                   name="author"
                   placeholder="author"
                   onChange={handleChange}
-                  ></input>
+                ></input>
                 <input
                   type="text"
                   className="input form-control"
@@ -71,7 +83,7 @@ const Create = ({ createBook }) => {
                   name="cover"
                   placeholder="cover (URL)"
                   onChange={handleChange}
-                  ></input>
+                ></input>
                 <input
                   type="number"
                   className="input form-control"
@@ -79,7 +91,7 @@ const Create = ({ createBook }) => {
                   name="year"
                   placeholder="year"
                   onChange={handleChange}
-                  ></input>
+                ></input>
                 <input
                   type="text"
                   className="input form-control"
@@ -87,7 +99,7 @@ const Create = ({ createBook }) => {
                   name="overview"
                   placeholder="overview"
                   onChange={handleChange}
-                  ></input>
+                ></input>
                 <input
                   type="text"
                   className="input form-control"
@@ -95,7 +107,7 @@ const Create = ({ createBook }) => {
                   name="genre"
                   placeholder="genre"
                   onChange={handleChange}
-                  ></input>
+                ></input>
                 <input
                   type="number"
                   className="input form-control"
@@ -103,18 +115,17 @@ const Create = ({ createBook }) => {
                   name="price"
                   placeholder="price"
                   onChange={handleChange}
-                  ></input>
+                ></input>
                 <input
                   type="submit"
                   className="btn btn-success"
                   value="Add Book"
-                  />
+                />
               </form>
             </section>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

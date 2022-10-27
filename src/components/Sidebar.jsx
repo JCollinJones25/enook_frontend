@@ -4,6 +4,7 @@ import Create from "./Create";
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
+  const [show, setShow] = useState(false);
 
   const showSidebar = () => {
     setSidebar(!sidebar);
@@ -49,9 +50,16 @@ const Sidebar = () => {
               Admin
             </button>
             <div className="dropdown-content">
-              <Create />
-              <a href="/">Edit Book</a>
-              <a href="/">Delete Book</a>
+              <button
+                type="button"
+                className="btn"
+                data-toggle="modal"
+                onClick={() => setShow(true)}>
+                  Enter New Book
+              </button> 
+              <Create show={show}/>
+              <button className="btn">Edit Book</button>
+              <button className="btn">Delete Book</button>
             </div>
           </li>
         </ul>

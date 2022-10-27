@@ -20,6 +20,13 @@ const Main = () => {
     }
   };
 
+  const deleteBook = async (id) => {
+    await fetch(url + id, {
+      method: "delete",
+    });
+    getBooks();
+  };
+
   const createBook = async (book) => {
     await fetch(url, {
       method: "post",
@@ -27,13 +34,6 @@ const Main = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(book),
-    });
-    getBooks();
-  };
-
-  const deleteBook = async (id) => {
-    await fetch(url + id, {
-      method: "delete",
     });
     getBooks();
   };
