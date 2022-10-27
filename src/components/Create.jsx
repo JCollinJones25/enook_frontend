@@ -51,78 +51,75 @@ const Create = ({ createBook, show }) => {
 
   if (show) {
     document.querySelector(".modal").style.display = "flex";
-  } 
+  }
 
   return (
     <div className="modal create">
       <div className="modal-content">
-        <div className="create-form">
-          <section>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                className="input form-control"
-                value={newBook.title}
-                name="title"
-                placeholder="title"
-                onChange={handleChange}
-                ></input>
-              <input
-                type="text"
-                className="input form-control"
-                value={newBook.author}
-                name="author"
-                placeholder="author"
-                onChange={handleChange}
-                ></input>
-              <input
-                type="text"
-                className="input form-control"
-                value={newBook.cover}
-                name="cover"
-                placeholder="cover (URL)"
-                onChange={handleChange}
-                ></input>
-              <input
-                type="number"
-                className="input form-control"
-                value={newBook.year}
-                name="year"
-                placeholder="year"
-                onChange={handleChange}
-                ></input>
-              <input
-                type="text"
-                className="input form-control"
-                value={newBook.overview}
-                name="overview"
-                placeholder="overview"
-                onChange={handleChange}
-                ></input>
-              <input
-                type="text"
-                className="input form-control"
-                value={newBook.genre}
-                name="genre"
-                placeholder="genre"
-                onChange={handleChange}
-                ></input>
-              <input
-                type="number"
-                className="input form-control"
-                value={newBook.price}
-                name="price"
-                placeholder="price"
-                onChange={handleChange}
-                ></input>
-              <input
-                type="submit"
-                className="btn btn-success"
-                value="Add Book"
-                />
-            </form>
-          </section>
-        </div>
+        <h2>Create a new book!</h2>
+        <form className="create-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            className="input form-control"
+            value={newBook.title}
+            name="title"
+            placeholder="title"
+            onChange={handleChange}
+          ></input>
+          <input
+            type="text"
+            className="input form-control"
+            value={newBook.author}
+            name="author"
+            placeholder="author"
+            onChange={handleChange}
+          ></input>
+          <input
+            type="text"
+            className="input form-control"
+            value={newBook.cover}
+            name="cover"
+            placeholder="cover (URL)"
+            onChange={handleChange}
+          ></input>
+          <input
+            type="number"
+            className="input form-control"
+            value={newBook.year}
+            name="year"
+            placeholder="year"
+            onChange={handleChange}
+          ></input>
+          <input
+            type="text"
+            className="input form-control"
+            value={newBook.overview}
+            name="overview"
+            placeholder="overview"
+            onChange={handleChange}
+          ></input>
+          <input
+            type="text"
+            className="input form-control"
+            value={newBook.genre}
+            name="genre"
+            placeholder="genre"
+            onChange={handleChange}
+          ></input>
+          <input
+            type="number"
+            className="input form-control"
+            value={newBook.price}
+            name="price"
+            placeholder="price"
+            onChange={handleChange}
+          ></input>
+          <input
+            type="submit"
+            className="btn btn-success add-btn"
+            value="Add Book"
+          />
+        </form>
       </div>
     </div>
   );

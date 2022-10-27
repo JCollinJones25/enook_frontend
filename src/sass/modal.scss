@@ -5,9 +5,35 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    padding: 50px;
+    height: auto;
+    width: 100%;
     position: fixed;
+}
+
+.modal-content {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
+    h2 {
+        color: $green;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        
+        input {
+            margin: 3px;
+        }
+        
+        .add-btn {
+            width: 150px;
+            margin: auto;
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
 }
