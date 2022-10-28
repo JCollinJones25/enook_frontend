@@ -13,9 +13,9 @@ const Library = ({ books }) => {
                 <Link to={`/${book._id}`}>
                   <img src={book.cover} alt={book.title} />
                   <div>
-                    <h4>{book.title}</h4>
+                    <h5>{book.title}</h5>
                     <p>by {book.author}</p>
-                    <h5 id="price">${book.price}</h5>
+                    <p id="price">${book.price}</p>
                   </div>
                 </Link>
               </div>
