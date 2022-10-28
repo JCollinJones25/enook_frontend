@@ -12,23 +12,29 @@ const Sidebar = () => {
 
   const openDropdown = () => {
     document.querySelector(".dropdown-content").style.display = "flex";
+    // document.querySelector(".dropdown-content").classList.toggle("show");
+    document.querySelector(".modal").style.display = "none";
   };
-
-  window.onclick = function closeDropdown(event) {
-    if (!event.target.matches(".dropbtn")) {
-      const dropdowns = document.querySelectorAll(".dropdown-content");
-      for (let i = 0; i < dropdowns.length; i++) {
-        let openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains("show")) {
-          openDropdown.classList.remove("show");
-        }
-      }
-    }
-  };
+  
+  // window.onclick = function closeDropdown(event) {
+  //   if (!event.target.matches(".dropbtn")) {
+  //     document.querySelector(".dropdown-content").style.display = "none";
+      // const dropdowns = document.querySelectorAll(".dropdown-content");
+      // for (let i = 0; i < dropdowns.length; i++) {
+        // let openDropdown = dropdowns[i];
+        // openDropdown.style.display = "none"
+        // if (openDropdown.classList.contains("show")) {
+        // if (openDropdown.style.display === "flex") {
+          // openDropdown.style.display = "none";
+      //     openDropdown.classList.remove("show");
+      //   }
+      // }
+  //   }
+  // };
 
   
   // const openModal = () => {
-    // setShow(true);
+  //   setShow(true);
   // }
 
   return (
@@ -57,14 +63,15 @@ const Sidebar = () => {
             <div className="dropdown-content">
               <button
                 type="button"
-                className="btn"
+                className="btn dropdown-item"
                 data-toggle="modal"
-                onClick={() => setShow(true)}>
+                onClick={() => setShow(true)}
+                >
                   Enter New Book
               </button> 
-              <Create show={show}/>
-              <button className="btn">Edit Book</button>
-              <button className="btn">Delete Book</button>
+              <Create show={show} setShow={setShow} />
+              <button className="btn dropdown-item">Edit Book</button>
+              <button className="btn dropdown-item">Delete Book</button>
             </div>
           </li>
         </ul>

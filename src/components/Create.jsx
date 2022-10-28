@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Create = ({ createBook, show }) => {
+const Create = ({ createBook, show, setShow }) => {
   const navigate = useNavigate();
 
   const [newBook, setNewBook] = useState({
@@ -37,17 +37,23 @@ const Create = ({ createBook, show }) => {
     navigate("/");
   };
 
-  // const resetModal = () => {
-  //   setNewBook({
-  //     title: "",
-  //     author: "",
-  //     cover: "",
-  //     year: "",
-  //     overview: "",
-  //     genre: "",
-  //     price: "",
-  //   });
-  // };
+  const closeModal = () => {
+    resetModal();
+    setShow(false);
+    document.querySelector(".modal").style.display = "none";
+  };
+
+  const resetModal = () => {
+    setNewBook({
+      title: "",
+      author: "",
+      cover: "",
+      year: "",
+      overview: "",
+      genre: "",
+      price: "",
+    });
+  };
 
   if (show) {
     document.querySelector(".modal").style.display = "flex";
@@ -56,6 +62,16 @@ const Create = ({ createBook, show }) => {
   return (
     <div className="modal create">
       <div className="modal-content">
+        <div className="close">
+          <button
+            type="button"
+            className="btn btn-danger"
+            data-dismiss="modal"
+            onClick={closeModal}
+          >
+            &times;
+          </button>
+        </div>
         <h2>Create a new book!</h2>
         <form className="create-form" onSubmit={handleSubmit}>
           <input
