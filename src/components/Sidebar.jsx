@@ -11,31 +11,8 @@ const Sidebar = () => {
   };
 
   const openDropdown = () => {
-    document.querySelector(".dropdown-content").style.display = "flex";
-    // document.querySelector(".dropdown-content").classList.toggle("show");
-    document.querySelector(".modal").style.display = "none";
+    document.querySelector(".dropdown-content").classList.toggle("show");
   };
-  
-  // window.onclick = function closeDropdown(event) {
-  //   if (!event.target.matches(".dropbtn")) {
-  //     document.querySelector(".dropdown-content").style.display = "none";
-      // const dropdowns = document.querySelectorAll(".dropdown-content");
-      // for (let i = 0; i < dropdowns.length; i++) {
-        // let openDropdown = dropdowns[i];
-        // openDropdown.style.display = "none"
-        // if (openDropdown.classList.contains("show")) {
-        // if (openDropdown.style.display === "flex") {
-          // openDropdown.style.display = "none";
-      //     openDropdown.classList.remove("show");
-      //   }
-      // }
-  //   }
-  // };
-
-  
-  // const openModal = () => {
-  //   setShow(true);
-  // }
 
   return (
     <div className="hamburger">
@@ -57,7 +34,7 @@ const Sidebar = () => {
           </li>
           <hr></hr>
           <li className="dropdown">
-            <button onClick={(openDropdown)} className="dropbtn">
+            <button onClick={openDropdown} className="dropbtn">
               Admin
             </button>
             <div className="dropdown-content">
@@ -66,9 +43,9 @@ const Sidebar = () => {
                 className="btn dropdown-item"
                 data-toggle="modal"
                 onClick={() => setShow(true)}
-                >
-                  Enter New Book
-              </button> 
+              >
+                Enter New Book
+              </button>
               <Create show={show} setShow={setShow} />
               <button className="btn dropdown-item">Edit Book</button>
               <button className="btn dropdown-item">Delete Book</button>
