@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { DataContext } from "./DataContext";
 
-const Create = ({ createBook, show, setShow }) => {
-  const navigate = useNavigate();
+const Create = ({ show, setShow }) => {
+  const { createBook } = useContext(DataContext);
 
   const [newBook, setNewBook] = useState({
     title: "",
@@ -34,7 +34,7 @@ const Create = ({ createBook, show, setShow }) => {
       genre: "",
       price: "",
     });
-    navigate("/");
+    window.location = "/";
   };
 
   const closeModal = () => {
