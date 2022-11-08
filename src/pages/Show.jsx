@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
+import Searchbar from "../components/Searchbar";
 
 const Show = ({ books, deleteBook }) => {
   const { id } = useParams();
@@ -14,9 +15,12 @@ const Show = ({ books, deleteBook }) => {
   const loaded = () => {
     return (
       <>
-        <h3 className="page-head">
+      <div className="page-header">
+        <h3>
           / {book.genre} / {book.title}
         </h3>
+        <Searchbar />
+      </div>
         <hr></hr>
         <div className="show">
           <div className="book-info">

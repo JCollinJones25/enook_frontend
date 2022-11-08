@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
+import Searchbar from "../components/Searchbar";
 
 const Library = ({ books }) => {
   return (
     <>
-      <h3 className="page-head">Library</h3>
+      <div className="page-header">
+        <h3>Library</h3>
+        <Searchbar />
+      </div>
       <hr></hr>
       <div className="library">
         {books.length > 0 ? (

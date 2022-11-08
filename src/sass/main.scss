@@ -31,10 +31,19 @@ main {
   margin: auto;
 }
 
-.page-head {
-  font-size: 20px;
-  margin: 15px 0 10px 0;
+.page-header {
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+
+  h3 {
+    font-size: 20px;
+    margin: 15px 0 10px 0;
+  }
 }
+
 
 .header {
   @include green-bg;
