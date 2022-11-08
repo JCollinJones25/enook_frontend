@@ -17,7 +17,7 @@ const Show = ({ books, deleteBook }) => {
       <>
       <div className="page-header">
         <h3>
-          / {book.genre} / {book.title}
+          / <a href="/">Library</a> / {book.title}
         </h3>
         <Searchbar />
       </div>
@@ -31,6 +31,7 @@ const Show = ({ books, deleteBook }) => {
                 <h3>by {book.author}</h3>
               </div>
               <div id="overview">
+                <h4>{book.genre}</h4>
                 <h3>Published in {book.year}</h3>
                 <p>{book.overview}</p>
               </div>
