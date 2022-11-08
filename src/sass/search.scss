@@ -1,0 +1,19 @@
+@use "variables" as *;
+
+.searchbar {
+    display: flex;
+
+    div {
+        input {
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+    }
+    
+    .btn {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border: 0.5px solid grey;
+        background-color: $grey;
+    }
+}

@@ -1,7 +1,6 @@
 const Searchbar = () => {
   return (
-    <>
-      <div className="input-group">
+      <div className="searchbar">
         <div className="form-outline">
           <input
             type="search"
@@ -10,7 +9,7 @@ const Searchbar = () => {
             placeholder="Search..."
           />
         </div>
-        <button type="button" className="btn btn-primary">
+        <button type="button" className="btn">
           <i className="bi bi-search">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +24,6 @@ const Searchbar = () => {
           </i>
         </button>
       </div>
-    </>
   );
 };
 

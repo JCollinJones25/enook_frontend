@@ -5,6 +5,7 @@ import "./sass/library.scss";
 import "./sass/show.scss";
 import "./sass/spinner.scss";
 import "./sass/modal.scss";
+import "./sass/search.scss";
 
 function App() {
   return (
