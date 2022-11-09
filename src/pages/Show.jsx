@@ -5,8 +5,7 @@ const Show = ({ books, deleteBook }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const book = books.find((b) => b._id === id);
-  console.log(book)
-
+  
   const removeBook = () => {
     deleteBook(id);
     navigate("/");

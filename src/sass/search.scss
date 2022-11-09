@@ -1,9 +1,9 @@
 @use "variables" as *;
 
 .searchbar {
-    display: flex;
+    form {
+        display: flex;
 
-    div {
         input {
             border-top-right-radius: 0px;
             border-bottom-right-radius: 0px;

@@ -13,8 +13,7 @@ import Library from "../pages/Library";
 import Show from "../pages/Show";
 import Footer from "./Footer";
 
-function App() {
-  
+const App = () => {
   const [books, setBooks] = useState([]);
 
   const url = "https://enook-api.herokuapp.com/library/";
@@ -68,6 +67,6 @@ function App() {
       <Footer />
     </div>
   );
-};
+}
 
 export default App;
