@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { Twirl as Hamburger } from "hamburger-react";
 import Create from "./Create";
-import Searchbar from "./Searchbar";
+import Search from "./Search";
 import { DataContext } from "./DataContext";
 
 const Sidebar = () => {
@@ -37,7 +37,7 @@ const Sidebar = () => {
           </li>
           <hr></hr>
           <li>
-            <Searchbar books={books} />
+            <Search books={books} />
           </li>
           <li className="dropdown">
             <button onClick={openDropdown} className="dropbtn">

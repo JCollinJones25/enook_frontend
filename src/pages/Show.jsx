@@ -1,25 +1,25 @@
 import { useNavigate, useParams } from "react-router-dom";
-import Searchbar from "../components/Searchbar";
+import Searchbar from "../components/Search";
 
 const Show = ({ books, deleteBook }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const book = books.find((b) => b._id === id);
-  
+
   const removeBook = () => {
     deleteBook(id);
     navigate("/");
-  }
+  };
 
   const loaded = () => {
     return (
       <>
-      <div className="page-header">
-        <h3>
-          <a href="/">Library</a> / {book.title}
-        </h3>
-        <Searchbar books={books}/>
-      </div>
+        <div className="page-header">
+          <h3>
+            <a href="/">Library</a> / {book.title}
+          </h3>
+          <Searchbar books={books} />
+        </div>
         <hr></hr>
         <div className="show">
           <div className="book-info">
@@ -38,10 +38,35 @@ const Show = ({ books, deleteBook }) => {
           </div>
           <div className="purchase">
             <h2 id="price">${book.price}</h2>
-            <button>Add to cart</button>
+            <div class="dropdown">
+              <button
+                class="btn btn-light dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Format
+              </button>
+              <div class="dropdown-menu format-menu" aria-labelledby="dropdownMenuButton">
+                <p class="dropdown-item">
+                  Mass Market
+                </p>
+                <p class="dropdown-item">
+                  Paperback
+                </p>
+                <p class="dropdown-item">
+                  Hard Cover
+                </p>
+              </div>
+            </div>
+            <button className="btn btn-warning " data-toggle="dropdown" type="button">Add to cart</button>
           </div>
         </div>
-        <button className="button is-danger" onClick={removeBook}>Delete Book</button>
+        <button className="button is-danger" onClick={removeBook}>
+          Delete Book
+        </button>
       </>
     );
   };

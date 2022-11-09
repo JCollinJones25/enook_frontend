@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import Searchbar from "../components/Searchbar";
+import Search from "../components/Search";
 
 const Library = ({ books }) => {
   return (
     <>
       <div className="page-header">
         <h3>Library</h3>
-        <Searchbar books={books} />
+        <Search books={books} />
       </div>
       <hr></hr>
       <div className="library">

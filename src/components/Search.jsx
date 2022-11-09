@@ -44,7 +44,7 @@ const Searchbar = ({ books }) => {
         </button>
       </div>
       {filteredBooks.length !== 0 && (
-        <div className="searchResults">
+        <div className="searchResults rounded">
           {filteredBooks.slice(0, 10).map((book) => {
             return (
               <a className="searchItem" key={book._id} href={`/${book._id}`}>
