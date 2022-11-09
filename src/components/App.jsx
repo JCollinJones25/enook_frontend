@@ -52,7 +52,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <DataContext.Provider value={{ createBook }}>
+      <DataContext.Provider value={{ books, createBook }}>
         <Header />
       </DataContext.Provider>
       <main>
