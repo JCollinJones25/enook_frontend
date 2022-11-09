@@ -1,13 +1,22 @@
 import { React, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { DataContext } from "./DataContext";
+import "../sass/main.scss";
+import "../sass/sidebar.scss";
+import "../sass/library.scss";
+import "../sass/show.scss";
+import "../sass/spinner.scss";
+import "../sass/modal.scss";
+import "../sass/search.scss";
 import Header from "./Header";
 import Library from "../pages/Library";
 import Show from "../pages/Show";
 import Footer from "./Footer";
 
-const Main = () => {
+function Main() {
+  
   const [books, setBooks] = useState([]);
+
   const url = "https://enook-api.herokuapp.com/library/";
 
   const getBooks = async () => {
@@ -43,7 +52,7 @@ const Main = () => {
   }, []);
 
   return (
-    <>
+    <div className="main">
       <DataContext.Provider value={{ createBook }}>
         <Header />
       </DataContext.Provider>
@@ -57,7 +66,7 @@ const Main = () => {
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
