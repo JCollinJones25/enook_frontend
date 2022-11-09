@@ -15,7 +15,7 @@ const Searchbar = () => {
 
   useEffect(() => {
     setSearch(searchState);
-  }, [searchState]);
+  }, [searchState, search]);
 
   return (
     <div className="searchbar">
