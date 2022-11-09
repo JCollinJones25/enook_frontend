@@ -3,32 +3,72 @@
 .searchbar {
     div {
         display: flex;
-
+        
         input {
             border-top-right-radius: 0px;
             border-bottom-right-radius: 0px;
+            border-right: transparent;
+        }
+        
+        button {
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border: 1px solid lightgray;
+            border-left: transparent;
+            background-color: white;
+        }
+        
+        input:focus, button:focus {
+            border-color: lightgray;
+            box-shadow: none;
         }
     }
-    
-    .btn {
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px;
-        border: 0.5px solid grey;
-        background-color: $grey;
+
+    .form-control:focus {
+        border-color: none;
     }
-
-}
-
-.searchResults {
-    width: 300px;
-    height: 200px;
-    background-color: white;
-    overflow: hidden;
-    overflow-y: auto;
-    z-index: 1;
+    
+    .searchResults {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 200px;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        overflow-y: auto;
+        z-index: 1;
+        position: absolute;
+        
+        a {
+            display: flex;
+            align-items: center;
+            padding: 20px 10px 10px 10px;
+            color: black;
+            text-decoration: none;
+            width: 100%;
+        }
+        
+        a:hover {
+            background-color: $grey;
+        }
+    }
 }
 
 .searchResults::-webkkit-scrollbar {
     display: none;
 }
+
+#searchIcon {
+    background-color: white;
+    font-size: medium;
+    cursor: default;
+}
+
+#closeBtn {
+    @extend #searchIcon;
+    cursor: pointer;
+
+}
+
 

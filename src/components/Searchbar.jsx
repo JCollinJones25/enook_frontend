@@ -35,21 +35,19 @@ const Searchbar = ({ books }) => {
           value={searchValue}
           onChange={handleChange}
         />
-        <button type="submit" className="btn" onClick={clearInput}>
-          <i className="bi bi-search">
+        <button type="submit" className="btn" id="searchIcon" onClick={clearInput}>
             {searchValue.length === 0 ? (
               <SearchIcon id="searchIcon"/>
             ) : (
-              <CloseIcon id="closeBtn" />
+              <CloseIcon id="closeBtn"/>
             )}
-          </i>
         </button>
       </div>
       {filteredBooks.length !== 0 && (
         <div className="searchResults">
-          {filteredBooks.slice(0, 10).map((book, key) => {
+          {filteredBooks.slice(0, 10).map((book) => {
             return (
-              <a className="searchItem" href={`/${book._id}`}>
+              <a className="searchItem" key={book._id} href={`/${book._id}`}>
                 <p>{book.title}</p>
               </a>
             );
