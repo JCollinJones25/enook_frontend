@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { DataContext } from "./DataContext";
-import "../sass/main.scss";
+import "../sass/global.scss";
 import "../sass/sidebar.scss";
 import "../sass/library.scss";
 import "../sass/show.scss";
@@ -13,7 +13,7 @@ import Library from "../pages/Library";
 import Show from "../pages/Show";
 import Footer from "./Footer";
 
-function Main() {
+function App() {
   
   const [books, setBooks] = useState([]);
 
@@ -52,7 +52,7 @@ function Main() {
   }, []);
 
   return (
-    <div className="main">
+    <div className="app">
       <DataContext.Provider value={{ createBook }}>
         <Header />
       </DataContext.Provider>
@@ -70,4 +70,4 @@ function Main() {
   );
 };
 
-export default Main;
+export default App;
