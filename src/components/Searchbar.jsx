@@ -1,50 +1,50 @@
 import { useState } from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Searchbar = ({ books }) => {
   const [filteredBooks, setFilteredBooks] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   const handleChange = (e) => {
     const search = e.target.value;
+    setSearchValue(search);
     const filter = books.filter((book) => {
-        return book.title.toLowerCase().includes(search.toLowerCase());
+      return book.title.toLowerCase().includes(search.toLowerCase());
     });
     if (search === "") {
-        setFilteredBooks([]);
+      setFilteredBooks([]);
     } else {
-        setFilteredBooks(filter);
+      setFilteredBooks(filter);
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(books);
+  const clearInput = () => {
+    setFilteredBooks([]);
+    setSearchValue("");
   };
 
   return (
     <div className="searchbar">
-      <form className="form-outline" onSubmit={handleSubmit}>
+      <div className="form-outline">
         <input
           type="search"
           id="form1"
           className="form-control"
           placeholder="Search..."
+          value={searchValue}
           onChange={handleChange}
         />
-        <button type="submit" className="btn">
+        <button type="submit" className="btn" onClick={clearInput}>
           <i className="bi bi-search">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-search"
-              viewBox="0 0 16 16"
-            >
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>
+            {searchValue.length === 0 ? (
+              <SearchIcon id="searchIcon"/>
+            ) : (
+              <CloseIcon id="closeBtn" />
+            )}
           </i>
         </button>
-      </form>
+      </div>
       {filteredBooks.length !== 0 && (
         <div className="searchResults">
           {filteredBooks.slice(0, 10).map((book, key) => {
