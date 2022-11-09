@@ -16,4 +16,19 @@
         border: 0.5px solid grey;
         background-color: $grey;
     }
+
 }
+
+.searchResults {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.searchResults::-webkkit-scrollbar {
+    display: none;
+}
+

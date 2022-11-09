@@ -1,21 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const Searchbar = () => {
-  const [searchState, setSearchState] = useState("");
-  const [search, setSearch] = useState("");
+const Searchbar = ({ books }) => {
+  const [filteredBooks, setFilteredBooks] = useState([]);
 
   const handleChange = (e) => {
-    setSearchState(e.target.value);
+    const search = e.target.value;
+    const filter = books.filter((book) => {
+        return book.title.toLowerCase().includes(search.toLowerCase());
+    });
+    if (search === "") {
+        setFilteredBooks([]);
+    } else {
+        setFilteredBooks(filter);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearch(searchState);
+    console.log(books);
   };
-
-  useEffect(() => {
-    setSearch(searchState);
-  }, [searchState, search]);
 
   return (
     <div className="searchbar">
@@ -42,6 +45,17 @@ const Searchbar = () => {
           </i>
         </button>
       </form>
+      {filteredBooks.length !== 0 && (
+        <div className="searchResults">
+          {filteredBooks.slice(0, 10).map((book, key) => {
+            return (
+              <a className="searchItem" href={`/${book._id}`}>
+                <p>{book.title}</p>
+              </a>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

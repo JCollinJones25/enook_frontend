@@ -18,7 +18,7 @@ const Show = ({ books, deleteBook }) => {
         <h3>
           <a href="/">Library</a> / {book.title}
         </h3>
-        <Searchbar />
+        <Searchbar books={books}/>
       </div>
         <hr></hr>
         <div className="show">

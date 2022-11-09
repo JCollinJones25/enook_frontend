@@ -6,7 +6,7 @@ const Library = ({ books }) => {
     <>
       <div className="page-header">
         <h3>Library</h3>
-        <Searchbar />
+        <Searchbar books={books} />
       </div>
       <hr></hr>
       <div className="library">
