@@ -24,7 +24,6 @@ const Create = ({ show, setShow }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     createBook(newBook);
-    console.log(newBook);
     setNewBook({
       title: "",
       author: "",
@@ -34,7 +33,7 @@ const Create = ({ show, setShow }) => {
       genre: "",
       price: "",
     });
-    window.location = "/";
+    closeModal();
   };
 
   const closeModal = () => {
@@ -72,7 +71,7 @@ const Create = ({ show, setShow }) => {
             &times;
           </button>
         </div>
-        <h2>Create a new book!</h2>
+        <h2>Add a new book to the DB</h2>
         <form className="create-form" onSubmit={handleSubmit}>
           <input
             type="text"
