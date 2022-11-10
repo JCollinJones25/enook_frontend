@@ -102,15 +102,23 @@ hr {
   color: $price;
 }
 
-.footer {
+footer {
   @include grey-bg;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: right;
   border-top: solid 0.5px grey;
   margin-top: 150px;
+  padding: 50px;
   width: 100vw;
   height: 200px;
+
+  a {
+    float: right;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
 }
 
 @media only screen and (max-width: 600px) {
