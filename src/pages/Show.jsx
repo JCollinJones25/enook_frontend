@@ -28,13 +28,15 @@ const Show = ({ books, deleteBook }) => {
                 <h2>{book.title}</h2>
                 <h3>by {book.author}</h3>
               </div>
-              <div id="overview">
+              <hr></hr>
+              <div className="overview">
                 <h4>{book.genre}</h4>
                 <h3>Published in {book.year}</h3>
                 <p>{book.overview}</p>
               </div>
           </div>
           <div className="container purchase">
+            <h2 id="price">${book.price}</h2>
             <div class="dropdown">
               <button
                 class="btn btn-light dropdown-toggle"
@@ -58,7 +60,6 @@ const Show = ({ books, deleteBook }) => {
                 </p>
               </div>
             </div>
-            <h2 id="price">${book.price}</h2>
             <button className="btn btn-warning">Add to cart</button>
           </div>
         </div>

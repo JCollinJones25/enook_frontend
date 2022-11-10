@@ -2,11 +2,10 @@
 
 .show {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  width: 90%;
-  padding: 15px;
-  margin: auto;
+  width: 100%;
+  margin: 35px auto;
 
   img {
     width: 300px;
@@ -21,16 +20,21 @@
     justify-content: space-evenly;
     min-height: 400px;
     max-height: 600px;
+    width: 50%;
     margin: 20px 20px 20px 20px;
     padding: 20px;
   }
 
   .purchase {
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 300px;
-    width: 200px;
+    width: 20%;
+
+    h2 {
+      text-align: center;
+    }
 
     button {
       border: 1px solid grey;
@@ -62,61 +66,52 @@
     display: grid;
     grid-template-columns: (2, 1fr);
     grid-template-rows: (3, auto);
-
+    width: 90%;
+    
     img {
       grid-row: 1;
       margin: auto;
-      width: 350px;
-      height: auto;
     }
-
+    
     .book-info {
-      grid-row: 2;
-      grid-column: 1 / span 2;
+      grid-row: 1;
+      grid-column: 2;
       text-align: left;
       width: 100%;
-      margin-left: 0;
+      margin: 20px;
     }
-
-    hr {
-      display: inline;
-    }
-
-    #overview {
-      border-top: solid 0.5px grey;
+    
+    .purchase {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      grid-row: 2;
+      grid-column: 1 / span 2;
+      margin: 20px auto;
+      width: 80%;
+      height: auto;
     }
   }
-
-  .purchase {
-    grid-row: 1;
-    float: left;
-    width: 35%;
-  }
+  
 }
 
 @media only screen and (max-width: 750px) {
   .show {
-
     img {
       grid-column: 1 / span 2;
-      margin: auto;
       width: 70%;
       height: auto;
     }
-
+    
     .book-info {
+      grid-column: 1 / span 2;
       grid-row: 2;
       margin: 20px auto;
     }
-
+    
     .purchase {
-      display: flex;
-      flex-direction: row;
-      grid-row: 3;
       grid-column: 1 / span 2;
-      margin: auto;
-      width: 80%;
-      height: auto;
+      grid-row: 3;
     }
   }
 }
