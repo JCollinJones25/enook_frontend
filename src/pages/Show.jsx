@@ -59,10 +59,10 @@ const Show = ({ books, deleteBook }) => {
               </div>
             </div>
             <h2 id="price">${book.price}</h2>
-            <button className="btn btn-warning " data-toggle="dropdown" type="button">Add to cart</button>
+            <button className="btn btn-warning">Add to cart</button>
           </div>
         </div>
-        <button className="button is-danger" onClick={removeBook}>
+        <button className="btn btn-danger" onClick={removeBook}>
           Delete Book
         </button>
       </>
