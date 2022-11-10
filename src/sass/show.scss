@@ -7,31 +7,23 @@
   width: 90%;
   padding: 15px;
   margin: auto;
-
-  .book-info {
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
-
+    
     img {
       width: 300px;
       height: 450px;
       object-fit: cover;
       box-shadow: $shadow;
     }
-
-    .book-text {
-      @extend .book-info;
-      flex-direction: column;
-      width: 65%;
-      max-height: 500px;
-      margin: 20px 20px 20px 20px;
-    }
-  }
     
-  .book-text {
-    padding: 20px;
-  }
+    .book-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      min-height: 400px;
+      max-height: 600px;
+      margin: 20px 20px 20px 20px;
+      padding: 20px;
+    }
   
   .purchase {
     justify-content: space-around;
@@ -70,23 +62,23 @@
   }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1000px) {
   .show {
-    .book-info {
-      width: 40%;
-      padding-left: 2%;
-      flex-direction: column;
-    }
+    display: grid;
+    grid-template-columns: (1, 1fr);
+    grid-template-rows: (2, auto);
 
-    .book-text {
+    .book-info {
+      grid-row: 2;
+      grid-column: 1;
       text-align: left;
-      width: 80%;
+      width: 100%;
       margin-left: 0;
       padding-left: 0;
-      z-index: 1;
-
+    }
+    
       hr {
-        display: block;
+        display: inline;
       }
 
       #overview {
@@ -95,10 +87,9 @@
     }
 
     .purchase {
-      position: relative;
-      z-index: 1;
+      grid-row: 1;
+      grid-column: 2;
       float: left;
       width: 35%;
     }
-  }
 }

@@ -22,9 +22,8 @@ const Show = ({ books, deleteBook }) => {
         </div>
         <hr></hr>
         <div className="show">
-          <div className="book-info">
             <img src={book.cover} alt={book.title} />
-            <div className="container book-text">
+            <div className="container book-info">
               <div>
                 <h2>{book.title}</h2>
                 <h3>by {book.author}</h3>
@@ -34,7 +33,6 @@ const Show = ({ books, deleteBook }) => {
                 <h3>Published in {book.year}</h3>
                 <p>{book.overview}</p>
               </div>
-            </div>
           </div>
           <div className="container purchase">
             <div class="dropdown">
