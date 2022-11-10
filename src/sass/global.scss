@@ -41,8 +41,8 @@ body,
   .header-left {
     display: flex;
     align-items: center;
-    width: 150px;
     justify-content: space-between;
+    width: 150px;
     margin-left: 30px;
 
     h4 {
@@ -52,7 +52,7 @@ body,
 
   .header-right {
     @extend .header-left;
-    width: 250px;
+    width: 25%;
     margin-right: 30px;
 
     h5 {
@@ -86,7 +86,7 @@ main {
 }
 
 hr {
-  margin: 0 0 15px 0;
+  margin: 0;
 }
 
 .container {
@@ -111,4 +111,8 @@ hr {
   margin-top: 150px;
   width: 100vw;
   height: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+  
 }
