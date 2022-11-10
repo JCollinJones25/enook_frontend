@@ -13,14 +13,14 @@ const Library = ({ books }) => {
         {books.length > 0 ? (
           books.map((book) => {
             return (
-              <div key={book._id} className="book">
+              <div key={book._id} className="container book">
                 <Link to={`/${book._id}`}>
                   <img src={book.cover} alt={book.title} />
                   <div>
                     <h5>{book.title}</h5>
-                    <p>by {book.author}</p>
-                    <p id="price">${book.price}</p>
+                    <h6>by {book.author}</h6>
                   </div>
+                    <p id="price">${book.price}</p>
                 </Link>
               </div>
             );

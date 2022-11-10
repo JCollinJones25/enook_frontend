@@ -3,6 +3,7 @@
 .show {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 90%;
   padding: 15px;
   margin: auto;
@@ -16,6 +17,7 @@
       width: 300px;
       height: 450px;
       object-fit: cover;
+      box-shadow: $shadow;
     }
 
     .book-text {
@@ -26,16 +28,14 @@
       margin: 20px 20px 20px 20px;
     }
   }
-
+    
+  .book-text {
+    padding: 20px;
+  }
+  
   .purchase {
-    display: flex;
-    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
-    border: 0.5px solid grey;
-    border-radius: 5px;
-    box-shadow: $shadow;
     height: 300px;
     width: 200px;
 
