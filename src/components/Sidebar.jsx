@@ -1,12 +1,14 @@
 import { useState, useContext } from "react";
 import { Twirl as Hamburger } from "hamburger-react";
 import Create from "./Create";
+import Delete from "./Delete";
 import Search from "./Search";
 import { DataContext } from "./DataContext";
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
-  const [show, setShow] = useState(false);
+  const [showCreate, setShowCreate] = useState(false);
+  const [showEditDelete, setShowEditDelete] = useState(false);
   const { books } = useContext(DataContext);
 
   const showSidebar = () => {
@@ -48,13 +50,20 @@ const Sidebar = () => {
                 type="button"
                 className="btn dropdown-item"
                 data-toggle="modal"
-                onClick={() => setShow(true)}
+                onClick={() => setShowCreate(true)}
               >
                 Enter New Book
               </button>
-              <Create show={show} setShow={setShow} />
-              <button className="btn dropdown-item">Edit Book</button>
-              <button className="btn dropdown-item">Delete Book</button>
+              <Create show={showCreate} setShow={setShowCreate} />
+              <button
+                type="button"
+                className="btn dropdown-item"
+                data-toggle="modal"
+                onClick={() => setShowEditDelete(true)}
+              >
+                Edit / Delete Book
+              </button>
+              <Delete show={showEditDelete} setShow={setShowEditDelete} />
             </div>
           </li>
         </ul>
