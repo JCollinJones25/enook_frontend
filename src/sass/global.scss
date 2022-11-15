@@ -82,6 +82,11 @@ main {
       text-decoration: none;
       color: black;
     }
+
+    a:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
   }
 }
 
