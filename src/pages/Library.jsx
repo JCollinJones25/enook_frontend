@@ -5,7 +5,7 @@ const Library = ({ books }) => {
   return (
     <>
       <div className="page-header">
-        <h3>Library</h3>
+        <h5>Library</h5>
         <Search books={books} />
       </div>
       <hr></hr>
@@ -20,7 +20,7 @@ const Library = ({ books }) => {
                     <h5>{book.title}</h5>
                     <h6>by {book.author}</h6>
                   </div>
-                    <p id="price">${book.price}</p>
+                  <p id="price">${book.price}</p>
                 </Link>
               </div>
             );

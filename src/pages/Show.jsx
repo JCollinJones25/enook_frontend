@@ -15,9 +15,9 @@ const Show = ({ books, deleteBook }) => {
     return (
       <>
         <div className="page-header">
-          <h3>
+          <h5>
             <a href="/">Library</a> / {book.title}
-          </h3>
+          </h5>
           <Searchbar books={books} />
         </div>
         <hr></hr>
