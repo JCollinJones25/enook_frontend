@@ -36,9 +36,9 @@ const Show = ({ books, deleteBook }) => {
           </div>
           <div className="container purchase">
             <h2 id="price">${book.price}</h2>
-            <div class="dropdown">
+            <div className="dropdown">
               <button
-                class="btn btn-light dropdown-toggle"
+                className="btn btn-light dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton"
                 data-toggle="dropdown"
@@ -47,14 +47,14 @@ const Show = ({ books, deleteBook }) => {
               >
                 Format
               </button>
-              <div class="dropdown-menu format-menu" aria-labelledby="dropdownMenuButton">
-                <p class="dropdown-item">
+              <div className="dropdown-menu format-menu" aria-labelledby="dropdownMenuButton">
+                <p className="dropdown-item">
                   Mass Market
                 </p>
-                <p class="dropdown-item">
+                <p className="dropdown-item">
                   Paperback
                 </p>
-                <p class="dropdown-item">
+                <p className="dropdown-item">
                   Hard Cover
                 </p>
               </div>

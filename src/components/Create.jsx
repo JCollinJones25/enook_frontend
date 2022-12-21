@@ -39,7 +39,7 @@ const Create = ({ show, setShow }) => {
   const closeModal = () => {
     resetModal();
     setShow(false);
-    document.querySelector(".modal").style.display = "none";
+    document.querySelector(".create").style.display = "none";
   };
 
   const resetModal = () => {

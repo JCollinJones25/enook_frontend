@@ -55,3 +55,23 @@
         }
     }
 }
+
+.modalSearchBar {
+    width: 500px;
+    color: red;
+}
+
+.modalSearchResults {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 300px;
+    margin-top: 2px;
+    background-color: white;
+    box-shadow: $shadow;
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 1;
+    position: absolute;
+
+}
