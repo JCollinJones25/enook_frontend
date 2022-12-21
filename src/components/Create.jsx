@@ -55,7 +55,7 @@ const Create = ({ show, setShow }) => {
   };
 
   if (show) {
-    document.querySelector(".modal").style.display = "flex";
+    document.querySelector(".create").style.display = "flex";
   }
 
   return (
