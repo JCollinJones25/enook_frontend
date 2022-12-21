@@ -26,12 +26,11 @@ const Show = ({ books, deleteBook }) => {
             <div className="container book-info">
               <div>
                 <h2>{book.title}</h2>
-                <h3>by {book.author}</h3>
+                <h4>by {book.author}</h4>
               </div>
               <hr></hr>
               <div className="overview">
-                <h4>{book.genre}</h4>
-                <h3>Published in {book.year}</h3>
+                <h4>{book.year} | {book.genre}</h4>
                 <p>{book.overview}</p>
               </div>
           </div>
