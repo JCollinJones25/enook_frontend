@@ -4,38 +4,35 @@ import Create from "./Create";
 import EditDelete from "./EditDelete";
 import Search from "./Search";
 import { DataContext } from "./DataContext";
+import $ from "jquery";
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
   const [showCreate, setShowCreate] = useState(false);
   const [showEditDelete, setShowEditDelete] = useState(false);
   const { books } = useContext(DataContext);
-  // let display = false;
+  const $dropdown = $(".dropdown-content");
+  let display = false;
 
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
 
-  // const openDropdown = () => {
-  //   if (!display){
-  //   document.querySelector(".dropdown-content").style.display = "flex";
-  //   display = true
-  // }
-  // console.log(display)
-  // };
-
   // document.addEventListener("click", (event) => {
-    // if (!event.target.classList.contains("dropdown-content") && document.querySelector(".dropdown-content").classList.contains("show")) {
-    //   document.querySelector(".dropdown-content").classList.toggle("show");
-    // }
-  //   if (display && !event.target.classList.contains("dropdown")) {
-  //     document.querySelector(".dropdown-content").style.display = "none";
-  //     display = false
+  //   if (display && !event.target.classList.contains("dropdown-content")) {
+  //     $dropdown.hide();
+  //     display = false;
   //   }
   // });
 
   const openDropdown = () => {
-    document.querySelector(".dropdown-content").classList.toggle("show");
+    if (!display) {
+      $dropdown.show();
+      display = true
+    } else {
+      $dropdown.hide()
+      display = false
+    }
   };
 
   return (

@@ -100,10 +100,11 @@
     z-index: 1;
     position: absolute;
 
-    div {
+    .modalSearchItem {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 0.5px solid lightgrey;
 
       p {
         padding: 20px 10px 0 10px;

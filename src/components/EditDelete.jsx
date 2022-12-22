@@ -1,18 +1,22 @@
 import { useContext } from "react";
 import { DataContext } from "./DataContext";
 import Search from "./Search";
+import $ from "jquery";
 
 const EditDelete = ({ show, setShow }) => {
   // const { deleteBook } = useContext(DataContext);
   const { books } = useContext(DataContext);
+  const $editDelete = $(".edit-delete");
 
   const closeModal = () => {
     setShow(false);
-    document.querySelector(".edit-delete").style.display = "none";
+    // document.querySelector(".edit-delete").style.display = "none";
+    $editDelete.hide();
   };
 
   if (show) {
-    document.querySelector(".edit-delete").style.display = "flex";
+    // document.querySelector(".edit-delete").style.display = "flex";
+    $editDelete.show()
   }
 
   return (

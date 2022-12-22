@@ -78,6 +78,15 @@
 
 .dropdown-content {
   display: none;
+  // display: flex;
+  flex-direction: column;
+  margin: 10px;
+  background-color: $drop;
+  box-shadow: $shadow;
+  width: 160px;
+  padding: 0;
+  z-index: 1;
+  position: fixed;
 
   .btn {
     color: black;
@@ -93,14 +102,14 @@
   }
 }
 
-.dropdown-content.show {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  background-color: $drop;
-  box-shadow: $shadow;
-  width: 160px;
-  padding: 0;
-  z-index: 1;
-  position: fixed;
-}
+// .dropdown-content.show {
+//   display: flex;
+//   flex-direction: column;
+//   margin: 10px;
+//   background-color: $drop;
+//   box-shadow: $shadow;
+//   width: 160px;
+//   padding: 0;
+//   z-index: 1;
+//   position: fixed;
+// }
