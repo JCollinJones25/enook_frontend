@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { DataContext } from "./DataContext";
 import Search from "./Search";
 
-const Delete = ({ show, setShow }) => {
+const EditDelete = ({ show, setShow }) => {
   // const { deleteBook } = useContext(DataContext);
   const { books } = useContext(DataContext);
 
@@ -34,4 +34,4 @@ const Delete = ({ show, setShow }) => {
   );
 };
 
-export default Delete;
+export default EditDelete;

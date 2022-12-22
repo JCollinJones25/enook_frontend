@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { Twirl as Hamburger } from "hamburger-react";
 import Create from "./Create";
-import Delete from "./Delete";
+import EditDelete from "./EditDelete";
 import Search from "./Search";
 import { DataContext } from "./DataContext";
 
@@ -63,7 +63,7 @@ const Sidebar = () => {
               >
                 Edit / Delete Book
               </button>
-              <Delete show={showEditDelete} setShow={setShowEditDelete} />
+              <EditDelete show={showEditDelete} setShow={setShowEditDelete} />
             </div>
           </li>
         </ul>
