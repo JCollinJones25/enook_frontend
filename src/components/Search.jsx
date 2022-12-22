@@ -15,7 +15,6 @@ const Searchbar = ({ books, modalSearch }) => {
     setSearchValue(search);
     const filter = books.filter((book) => {
       setId(book._id);
-      console.log(book._id);
       return book.title.toLowerCase().includes(search.toLowerCase());
     });
     if (search === "") {

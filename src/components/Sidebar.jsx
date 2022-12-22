@@ -10,10 +10,29 @@ const Sidebar = () => {
   const [showCreate, setShowCreate] = useState(false);
   const [showEditDelete, setShowEditDelete] = useState(false);
   const { books } = useContext(DataContext);
+  // let display = false;
 
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
+
+  // const openDropdown = () => {
+  //   if (!display){
+  //   document.querySelector(".dropdown-content").style.display = "flex";
+  //   display = true
+  // }
+  // console.log(display)
+  // };
+
+  // document.addEventListener("click", (event) => {
+    // if (!event.target.classList.contains("dropdown-content") && document.querySelector(".dropdown-content").classList.contains("show")) {
+    //   document.querySelector(".dropdown-content").classList.toggle("show");
+    // }
+  //   if (display && !event.target.classList.contains("dropdown")) {
+  //     document.querySelector(".dropdown-content").style.display = "none";
+  //     display = false
+  //   }
+  // });
 
   const openDropdown = () => {
     document.querySelector(".dropdown-content").classList.toggle("show");
