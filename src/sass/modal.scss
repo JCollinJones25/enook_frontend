@@ -1,77 +1,58 @@
 @use "variables" as *;
 
 .modal {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 50px;
-    height: 100%;
-    width: 100%;
-    position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }
 
 .modal-content {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: auto;
+  min-width: 350px;
+  max-width: 900px;
+  height: 500px;
+
+  .close {
     display: flex;
-    align-items: center;
-    padding: 20px;
-    margin: auto;
-    min-width: 350px;
-    max-width: 900px;
-    height: 500px;
+    justify-content: right;
+    width: 100%;
 
-    .close {
-        display: flex; 
-        justify-content: right;   
-        width: 100%;
-        
-        .btn {
-            text-align: center;
-            color: red;
-            width: 25px;
-            height: 25px;
-            padding: 0;
-        }
+    .btn {
+      text-align: center;
+      color: red;
+      width: 25px;
+      height: 25px;
+      padding: 0;
     }
+  }
 
-    h2 {
-        color: $green;
-    }
+  h2 {
+    color: $green;
+  }
 
-    form {
-        display: flex;
-        flex-direction: column;
-        width: 75%;
-        
-        input {
-            margin: 3px;
-        }
-        
-        .add-btn {
-            width: 150px;
-            margin: auto;
-            margin-top: 10px;
-            text-align: center;
-        }
-    }
-}
-
-.modalSearchBar {
-    width: 500px;
-    color: red;
-}
-
-.modalSearchResults {
+  form {
     display: flex;
     flex-direction: column;
-    width: 500px;
-    height: 300px;
-    margin-top: 2px;
-    background-color: white;
-    box-shadow: $shadow;
-    overflow: hidden;
-    overflow-y: auto;
-    z-index: 1;
-    position: absolute;
+    width: 75%;
 
+    input {
+      margin: 3px;
+    }
+
+    .add-btn {
+      width: 150px;
+      margin: auto;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
 }
+
