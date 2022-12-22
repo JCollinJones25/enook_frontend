@@ -7,89 +7,19 @@
     input {
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
-      border-right: transparent;
-    }
-
-    button {
-      border-top-left-radius: 0px;
-      border-bottom-left-radius: 0px;
-      border: 1px solid lightgray;
-      border-left: transparent;
-      background-color: white;
-    }
-
-    input:focus,
-    button:focus {
-      border-color: lightgray;
+      border-right: transparent ;
       box-shadow: none;
     }
-  }
-
-  .form-control:focus {
-    border-color: none;
-  }
-
-  .searchResults {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    height: 200px;
-    margin-top: 2px;
-    background-color: white;
-    box-shadow: $shadow;
-    overflow: hidden;
-    overflow-y: auto;
-    z-index: 1;
-    position: absolute;
-
-    a {
-      padding: 20px 10px 0 10px;
-      color: black;
-      text-decoration: none;
-      width: 100%;
-    }
-
-    a:hover {
-      background-color: $grey;
-    }
-  }
-}
-
-.searchResults::-webkkit-scrollbar {
-  display: none;
-}
-
-#searchIcon {
-  background-color: white;
-  font-size: medium;
-  cursor: default;
-}
-
-#closeBtn {
-  @extend #searchIcon;
-  cursor: pointer;
-}
-
-.modalSearchBar {
-  width: 75%;
-
-  div {
-    display: flex;
-
-    input {
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
-      border-right: transparent;
-    }
 
     button {
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
       border: 1px solid lightgray;
-      border-left: transparent;
+      border-left: transparent ;
       background-color: white;
-      max-width: 50px;
+      box-shadow: none;
     }
+
     
     input:focus,
     button:focus {
@@ -102,37 +32,114 @@
     border-color: none;
 }
 
-.modalSearchResults {
+.searchResults {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 200px;
+    height: 200px;
     margin-top: 2px;
     background-color: white;
+    box-shadow: $shadow;
     overflow: hidden;
     overflow-y: auto;
     z-index: 1;
     position: absolute;
     
+    a {
+        padding: 20px 10px 0 10px;
+        color: black;
+        text-decoration: none;
+        width: 100%;
+    }
+    
+    a:hover {
+        background-color: $grey;
+    }
+}
+}
+
+#searchIcon {
+    background-color: white;
+    font-size: medium;
+    cursor: default;
+}
+
+#closeBtn {
+    @extend #searchIcon;
+    cursor: pointer;
+}
+.searchResults::-webkkit-scrollbar {
+    display: none;
+}
+
+.modalSearchBar {
+    width: 75%;
+    
     div {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         
-        p {
-            padding: 20px 10px 0 10px;
-            color: black;
-            width: auto;
+        input {
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-right: transparent;
         }
         
         button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 2px;
-            border: 0.5px solid grey;
-            border-radius: 5px;
-            height: 40px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border: 1px solid lightgray;
+            border-left: transparent;
+            background-color: white;
+            max-width: 50px;
+        }
+        
+        input:focus,
+        button:focus {
+            border-color: lightgray;
+            box-shadow: none;
         }
     }
-  }
+    
+    .form-control:focus {
+        border-color: none;
+    }
+    
+    .modalSearchResults {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin-top: 2px;
+        background-color: white;
+        overflow: hidden;
+        overflow-y: auto;
+        z-index: 1;
+        position: absolute;
+        
+        div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            p {
+                padding: 20px 10px 0 10px;
+                color: black;
+                width: auto;
+            }
+            
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 2px;
+                border: 0.5px solid grey;
+                border-radius: 5px;
+                height: 40px;
+            }
+        }
+    }
+
+}
+
+.modalSearchResults::-webkkit-scrollbar {
+  display: none;
 }
