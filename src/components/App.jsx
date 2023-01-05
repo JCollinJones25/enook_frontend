@@ -28,13 +28,6 @@ const App = () => {
     }
   };
 
-  const deleteBook = async (id) => {
-    await fetch(url + id, {
-      method: "delete",
-    });
-    getBooks();
-  };
-
   const createBook = async (book) => {
     await fetch(url, {
       method: "post",
@@ -45,6 +38,20 @@ const App = () => {
     });
     getBooks();
   };
+  
+  const editBook = async (id) => {
+    await fetch(url + id, {
+      method: "put",
+    });
+    getBooks();
+  }
+  
+  const deleteBook = async (id) => {
+    await fetch(url + id, {
+      method: "delete",
+    });
+    getBooks();
+  };
 
   useEffect(() => {
     getBooks();
@@ -52,7 +59,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <DataContext.Provider value={{ books, createBook, deleteBook }}>
+      <DataContext.Provider value={{ books, createBook, editBook, deleteBook }}>
         <Header />
       </DataContext.Provider>
       <main>
