@@ -4,7 +4,7 @@ import Search from "./Search";
 import $ from "jquery";
 
 const EditDelete = ({ show, setShow }) => {
-  // const { deleteBook } = useContext(DataContext);
+  const { deleteBook } = useContext(DataContext);
   const { books } = useContext(DataContext);
   const $editDelete = $(".edit-delete");
 
@@ -32,7 +32,7 @@ const EditDelete = ({ show, setShow }) => {
             &times;
           </button>
         </div>
-        <Search books={books} modalSearch={true} />
+        <Search books={books} modalSearch={true} deleteBook={deleteBook}/>
       </div>
     </div>
   );
