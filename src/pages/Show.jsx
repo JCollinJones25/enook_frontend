@@ -1,15 +1,9 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Searchbar from "../components/Search";
 
-const Show = ({ books, deleteBook }) => {
+const Show = ({ books }) => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const book = books.find((b) => b._id === id);
-
-  const removeBook = () => {
-    deleteBook(id);
-    navigate("/");
-  };
 
   const loaded = () => {
     return (
@@ -62,9 +56,6 @@ const Show = ({ books, deleteBook }) => {
             <button className="btn btn-warning">Add to cart</button>
           </div>
         </div>
-        <button className="btn btn-danger" onClick={removeBook}>
-          Delete Book
-        </button>
       </>
     );
   };

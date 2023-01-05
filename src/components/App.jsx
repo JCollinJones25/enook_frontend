@@ -60,7 +60,7 @@ const App = () => {
           <Route path="/" element={<Library books={books} />} />
           <Route
             path="/:id"
-            element={<Show books={books} deleteBook={deleteBook} />}
+            element={<Show books={books} />}
           />
         </Routes>
       </main>
