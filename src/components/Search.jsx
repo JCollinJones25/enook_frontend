@@ -28,7 +28,7 @@ const Searchbar = ({ books, modalSearch, editBook, deleteBook }) => {
 
   const removeBook = () => {
     deleteBook(id);
-    clearInput();
+    setFilteredBooks(filteredBooks.filter((book) => book._id !== id));
   };
 
   const updateBook = () => {
