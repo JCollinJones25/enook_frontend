@@ -13,9 +13,7 @@ const EditDelete = ({ show, setShow }) => {
     $editDelete.hide();
   };
 
-  if (show) {
-    $editDelete.show()
-  }
+  show ? $editDelete.show() : $editDelete.hide();
 
   return (
     <div className="modal edit-delete">
