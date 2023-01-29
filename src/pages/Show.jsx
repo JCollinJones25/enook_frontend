@@ -3,7 +3,7 @@ import Searchbar from "../components/Search";
 
 const Show = ({ books }) => {
   const { id } = useParams();
-  const book = books.find((book) => book._id === id);
+  const book = books.find(book => book._id === id);
 
   const loaded = () => {
     return (
