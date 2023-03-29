@@ -115,11 +115,14 @@
       }
 
       .edit-form {
-        display: none;
-        width: 100%;
+        // display: none;
+        width: 90%;
 
-        > input {
-          width: 100%;
+        .edit-input {
+          width: 90%;
+          border-right: 0.5px solid lightgray;
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
         }
       }
 

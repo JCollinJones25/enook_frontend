@@ -39,12 +39,14 @@ const App = () => {
     getBooks();
   };
   
-  const editBook = async (id) => {
-    await fetch(url + id, {
-      method: "put",
-    });
-    getBooks();
-  }
+  // const editBook = async (id) => {
+  //   await fetch(url + id, {
+  //     method: "put",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(body),
+  //   });
+  //   getBooks();
+  // }
   
   const deleteBook = async (id) => {
     await fetch(url + id, {
@@ -59,7 +61,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <DataContext.Provider value={{ books, createBook, editBook, deleteBook }}>
+      <DataContext.Provider value={{ books, createBook, url, deleteBook }}>
         <Header />
       </DataContext.Provider>
       <main>

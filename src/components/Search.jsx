@@ -8,6 +8,7 @@ const Searchbar = ({ books, modalSearch, deleteBook }) => {
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [id, setId] = useState("");
+  const [showForm, setShowForm] = useState(false)
   const $editForm = $(".edit-form");
 
   const handleChange = (e) => {
@@ -35,7 +36,8 @@ const Searchbar = ({ books, modalSearch, deleteBook }) => {
   };
 
   const handleClick = () => {
-    $editForm.hide()
+    showForm ? setShowForm(false) : setShowForm(true)
+    console.log(showForm)
   }
 
   return (
